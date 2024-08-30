@@ -10,7 +10,8 @@ from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import time
 
-batchSizeList = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]
+batchSizeList = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096]
+unitsList = [1, 2, 4, 8, 16, 32, 64, 128, 256]
 
 st.set_page_config(
     page_title="Tensorflow Model",
@@ -49,9 +50,10 @@ epochs = st.sidebar.slider(label="Epochs", min_value=1, max_value=10)
 batchSize = st.sidebar.select_slider(label="Batch Size", options=batchSizeList)
 
 st.sidebar.write("# Number of Units")
-l2 = st.sidebar.slider(label="Layer 2", min_value=1, max_value=100)
-l3 = st.sidebar.slider(label="Layer 3", min_value=1, max_value=100)
-l4 = st.sidebar.slider(label="Layer 4", min_value=1, max_value=100)
+
+l2 = st.sidebar.select_slider(label="Layer 2", options=unitsList)
+l3 = st.sidebar.select_slider(label="Layer 3", options=unitsList)
+l4 = st.sidebar.select_slider(label="Layer 4", options=unitsList)
 
 if st.sidebar.button(label="Train Model", type="primary"):
     with st.spinner("Training Model"):
