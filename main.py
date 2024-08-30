@@ -10,7 +10,7 @@ from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import time
 
-batchSizeList = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096]
+batchSizeList = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]
 unitsList = [1, 2, 4, 8, 16, 32, 64, 128, 256]
 
 st.set_page_config(
